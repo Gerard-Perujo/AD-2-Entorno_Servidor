@@ -6,7 +6,7 @@ Para la realización de la práctica se empleará una base de datos con dos tabl
 
 La estructura de ambas tablas se muestra en la siguiente imagen:
 
-unnamed (1).png
+![BBDD](BBDD.png)
 
 El script de la base de datos lo aporta el profesor en Unidades formativas en la UF4 junto a la actividad.
 
@@ -14,7 +14,7 @@ La base de datos ya tiene dos cuentas para probar.
 
 El aspecto de las páginas de la aplicación será similar al que se muestra en la siguiente imagen:
 
-unnamed (2).png
+!ejercicio(ejercicio.png)
 
 Al iniciarse la aplicación se solicitará el número de cuenta con la que se quiere operar y la cuenta se guardará en un atributo de sesión. Tras validar la misma:
 
