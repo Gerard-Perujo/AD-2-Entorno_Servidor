@@ -14,7 +14,7 @@ La base de datos ya tiene dos cuentas para probar.
 
 El aspecto de las páginas de la aplicación será similar al que se muestra en la siguiente imagen:
 
-!ejercicio(ejercicio.png)
+![ejercicio](ejercicio.png)
 
 Al iniciarse la aplicación se solicitará el número de cuenta con la que se quiere operar y la cuenta se guardará en un atributo de sesión. Tras validar la misma:
 
