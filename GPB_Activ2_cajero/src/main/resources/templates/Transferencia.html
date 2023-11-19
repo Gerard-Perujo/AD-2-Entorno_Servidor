@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeLeaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Transferencia</title>
+<link rel="stylesheet" href="general.css">
+</head>
+<body>
+	<div class="contenido">
+	<h4>Numero de cuenta de donde se realiza la Transferencia: <span th:text="${session.cuentas.idCuenta}"></span></h4>
+	<form th:action="@{/Transferencia}" method="post">
+		<label>Introduce la cantidad a traspassar deseada: </label>
+		<input type="number" name="saldo">
+		</br>
+		<label>Introduce el num de Cuenta a Transferir:  </label>
+		<input type="number" name="idCuenta">
+		</br>
+		<input type="submit" value="Realizar Transferencia">
+	</form>
+	<a th:href="@{/Cuenta}">
+		<input type="button" value="Volver a Cuenta">
+	</a>
+	<h2 th:text="${mensaje}" class="Error"></h2>
+	</div>
+</body>
+</html>

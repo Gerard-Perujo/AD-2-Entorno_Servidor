@@ -1,0 +1,38 @@
+body{
+	display:flex;
+	justify-content:center;
+	align-items:center;
+}
+
+.contenido{
+	position:relative;
+	border: black 4px solid;
+	text-align:center;
+	margin-top:200px;
+	padding:16px;
+}
+
+.contenido input{
+	margin-top:16px;
+}
+
+.tabla{
+	border: black 2px solid;
+	margin:0 auto;
+}
+
+.tabla th{
+	border: black 2px solid;
+}
+
+.tabla td{
+	border: black 2px solid;
+}
+
+.Error{
+	color:red;
+}
+
+.Correcto{
+	color:green;
+}

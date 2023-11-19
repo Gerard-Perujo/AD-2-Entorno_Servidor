@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeLeaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Pagina Inicio Sesion</title>
+<link rel="stylesheet" href="login.css">
+</head>
+<body>
+	<div class="contenedor">
+		<div class="formulario">
+	
+		<h3>Formulario Inicio de Session</h3>
+	
+			<form th:action="@{/login}" method="post">
+				<label>Escriba el Numero de la Cuenta: </label>
+				</br>
+				<input type="text" name="idCuenta" >
+				</br>
+				<input type="submit" value="Entrar Cuenta" class="boton">
+			</form>
+	
+			<h4 th:text="${mensaje}" class="Error"></h4>
+			<h4 th:text="${mensajelogout}" class="logout"></h4>
+			</br>
+			<a th:href="@{/}">
+				<input type="button" value="Volver al Home" class="boton">
+			</a>
+		</div>
+	</div>
+
+
+</body>
+</html>

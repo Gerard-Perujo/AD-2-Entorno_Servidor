@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeLeaf.org">
+<head>
+<meta charset="UTF-8">
+<title>movimientos</title>
+<link rel="stylesheet" href="general.css">
+</head>
+<body>
+	<div class="contenido">
+	<h2>El Numero de la Cuenta es: <span th:text="${session.cuentas.idCuenta}"></span></h2>
+	<h3>Tiene un saldo de: <span th:text="${session.cuentas.saldo}"></span></h3>
+	
+	<form th:action="@{/Movimientos}" method="get">
+	<h3>Listado de todos los Movimientos de la cuenta</h3>
+	<table class= "tabla">
+		<tr>
+			<th>Cantidad</th>
+			<th>Fecha</th>
+			<th>Tipo</th>
+		</tr>
+		<!-- Recorro el evento con un for each para ir poniendo
+		los datos de cada variable de la clase eventos en una columna -->
+		<tr th:each="movimiento : ${movimientos}">
+			<td th:text= "${movimiento.cantidad}"></td>
+			<td th:text="${movimiento.fecha}"></td>
+			<td th:text="${movimiento.operacion}"></td>
+		</tr>
+	</table>
+	</form>
+	</br>
+	<a th:href="@{/Cuenta}">
+		<input type="button" value="Volver a Cuenta">
+	</a>
+	</div>
+</body>
+</html>

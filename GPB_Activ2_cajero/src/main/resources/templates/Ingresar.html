@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeLeaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Ingresar dinero</title>
+<link rel="stylesheet" href="general.css">
+</head>
+<body>
+	<div class="contenido">
+	<h4>Dinero que quieres ingresar en la Cuenta : <span th:text="${session.cuentas.idCuenta}"></span></h4>
+	<form th:action="@{/Ingresar}" method="post">
+		<label>Introduce la cantidad a Ingresar deseada: </label>
+		<input type="number" name="saldo">
+		</br>
+		<input type="submit" value="Realizar Ingreso">
+	</form>
+	<a th:href="@{/Cuenta}">
+		<input type="button" value="Volver a Cuenta">
+	</a>
+	</div>
+</body>
+</html>
