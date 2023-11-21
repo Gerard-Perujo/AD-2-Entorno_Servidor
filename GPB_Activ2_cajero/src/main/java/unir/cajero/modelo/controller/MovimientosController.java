@@ -24,11 +24,19 @@ public class MovimientosController {
 	private MovimientosDao moviDao;
 	
 	@GetMapping("/Movimientos")
-	public String mostrarMovimientos(Model model) {
-		List<Movimientos> movi = moviDao.sacarTodo();
+	public String mostrarMovimientos(HttpSession session, Model model) {
+		Cuentas cue = (Cuentas) session.getAttribute("cuentas");
+		int idCuenta = cue.getIdCuenta();
+		List<Movimientos> movi = moviDao.sacarTodo(idCuenta);
 		model.addAttribute("movimientos", movi);		
 		return "Movimientos";
 	}
 	
+	
+	@InitBinder
+	public void initBinder(WebDataBinder binder) {
+		SimpleDateFormat dateFormat = new SimpleDateFormat("dd-MMM-yyyy, HH:mm:ss");
+		binder.registerCustomEditor(Date.class, new CustomDateEditor(dateFormat, false));
+	}
 	
 }
