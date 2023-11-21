@@ -42,8 +42,8 @@ public class TransferenciaController {
 				cuedao.ingreso(cue2, saldo);
 				session.setAttribute("cuentas", cue);
 				ratt.addFlashAttribute("mensajeIngreso", "Se han Realizado la Transferencia de " + saldo + "€" + " a la cuenta: " + cue2.getIdCuenta());
-				movidao.movimientoIngreso(cue2, saldo, fecha, "");
-				movidao.movimientoExtraer(cue, saldo, fecha, "");
+				movidao.movimientoIngresoTransferencia(cue2, saldo, fecha, "");
+				movidao.movimientoExtraerTransferencia(cue, saldo, fecha, "");
 				return "redirect:/Cuenta";
 			}else {
 				ratt.addFlashAttribute("mensaje", "!!!ERROR¡¡¡ La Cuenta Introducida No Existe");

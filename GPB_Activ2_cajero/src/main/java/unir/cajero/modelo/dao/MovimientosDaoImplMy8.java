@@ -78,6 +78,40 @@ public class MovimientosDaoImplMy8 implements MovimientosDao{
 	    }
 		return 0;
 	}
+
+	@Override
+	public int movimientoIngresoTransferencia(Cuentas cuenta, double cantidad, Date fecha, String operacion) {
+		try {
+			Movimientos movi = new Movimientos();
+			movi.setCuenta(cuedao.buscarUna(cuenta.getIdCuenta()));
+			movi.setCantidad(cantidad);
+			movi.setFecha(fecha);
+			movi.setOperacion("Ingreso Transferencia");
+			movi.setIdMovimiento(idAuto);
+			movimientosRepository.save(movi);
+	    } catch (Exception e) {
+	        e.printStackTrace();
+	       
+	    }
+		return 0;
+	}
+
+	@Override
+	public int movimientoExtraerTransferencia(Cuentas cuenta, double cantidad, Date fecha, String operacion) {
+		try {
+			Movimientos movi = new Movimientos();
+			movi.setCuenta(cuedao.buscarUna(cuenta.getIdCuenta()));
+			movi.setCantidad(cantidad);
+			movi.setFecha(fecha);
+			movi.setOperacion("Retiro Transferencia");
+			movi.setIdMovimiento(idAuto);
+			movimientosRepository.save(movi);
+	    } catch (Exception e) {
+	        e.printStackTrace();
+	       
+	    }
+		return 0;
+	}
 }
 
 	

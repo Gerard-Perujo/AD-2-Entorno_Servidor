@@ -14,6 +14,10 @@ public interface MovimientosDao {
 	
 	int movimientoExtraer(Cuentas cuenta, double cantidad, Date fecha, String operacion);
 	
+	int movimientoIngresoTransferencia(Cuentas cuenta, double cantidad, Date fecha, String operacion);
+	
+	int movimientoExtraerTransferencia(Cuentas cuenta, double cantidad, Date fecha, String operacion);
+	
 	
 
 }
