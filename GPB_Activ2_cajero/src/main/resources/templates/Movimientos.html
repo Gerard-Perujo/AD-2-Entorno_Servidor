@@ -7,10 +7,10 @@
 </head>
 <body>
 	<div class="contenido">
-	<h2>El Numero de la Cuenta es: <span th:text="${session.cuentas.idCuenta}"></span></h2>
-	<h3>Tiene un saldo de: <span th:text="${session.cuentas.saldo}"></span></h3>
+	<h2>El Numero de la Cuenta es: <span th:text="${session.cuentas.idCuenta}"></span></h2><!-- a traves del objeto session sacamos el id de la cuenta con la que hemos accedido -->
+	<h3>Tiene un saldo de: <span th:text="${session.cuentas.saldo}"></span></h3><!-- a traves del objeto session sacamos el saldo de la cuenta con la que hemos accedido -->
 	
-	<form th:action="@{/Movimientos}" method="get">
+	<form th:action="@{/Movimientos}" method="get"><!-- utilizamos el getmapping movimientos para poder sacar toda la informacion -->
 	<h3>Listado de todos los Movimientos de la cuenta</h3>
 	<table class= "tabla">
 		<tr>
@@ -20,15 +20,15 @@
 		</tr>
 		<!-- Recorro el evento con un for each para ir poniendo
 		los datos de cada variable de la clase eventos en una columna -->
-		<tr th:each="movimiento : ${movimientos}">
-			<td th:text= "${movimiento.cantidad}"></td>
-			<td th:text="${movimiento.fecha}"></td>
-			<td th:text="${movimiento.operacion}"></td>
+		<tr th:each="movimiento : ${movimientos}"><!-- con el string movimientos que contiene el objeto movimiento recorremos la lista y plasmamos todos los datos que contiene el objeto -->
+			<td th:text= "${movimiento.cantidad}"></td><!-- sacamos la cantidad del movimiento -->
+			<td th:text="${movimiento.fecha}"></td><!-- sacamos la fecha del movimiento -->
+			<td th:text="${movimiento.operacion}"></td><!-- sacamos el tipo de operacion del movimiento -->
 		</tr>
 	</table>
 	</form>
 	</br>
-	<a th:href="@{/Cuenta}">
+	<a th:href="@{/Cuenta}"><!-- boton que nos devuelve a la pagina cuenta -->
 		<input type="button" value="Volver a Cuenta">
 	</a>
 	</div>

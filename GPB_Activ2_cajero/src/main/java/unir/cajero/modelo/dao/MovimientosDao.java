@@ -6,6 +6,14 @@ import java.util.List;
 import unir.cajero.modelo.entity.Cuentas;
 import unir.cajero.modelo.entity.Movimientos;
 
+
+/**
+ * Interface de Movimientos donde tendremos nuestros metodos que utilizaremos para
+ * sacar la informacion
+ * 
+ * @author Gerard Perujo
+ *
+ */
 public interface MovimientosDao {
 	
 	List<Movimientos> sacarTodo(int idCuenta);

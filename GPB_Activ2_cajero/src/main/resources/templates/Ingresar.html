@@ -7,14 +7,14 @@
 </head>
 <body>
 	<div class="contenido">
-	<h4>Dinero que quieres ingresar en la Cuenta : <span th:text="${session.cuentas.idCuenta}"></span></h4>
-	<form th:action="@{/Ingresar}" method="post">
+	<h4>Dinero que quieres ingresar en la Cuenta : <span th:text="${session.cuentas.idCuenta}"></span></h4><!-- a traves del objeto session sacamos el id de la cuenta con la que hemos accedido -->
+	<form th:action="@{/Ingresar}" method="post"><!-- Aqui llamamos el post mapping ingresar para que realize las operaciones  -->
 		<label>Introduce la cantidad a Ingresar deseada: </label>
-		<input type="number" name="saldo">
+		<input type="number" name="saldo"><!-- la cantidad de dinero que le vamos a passar a la cuenta para que la sume en nuestra cuenta -->
 		</br>
 		<input type="submit" value="Realizar Ingreso">
 	</form>
-	<a th:href="@{/Cuenta}">
+	<a th:href="@{/Cuenta}"><!-- boton con la ruta de la pagina cuenta -->
 		<input type="button" value="Volver a Cuenta">
 	</a>
 	</div>

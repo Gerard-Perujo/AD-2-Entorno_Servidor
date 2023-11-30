@@ -11,7 +11,7 @@
 	
 		<h3>Formulario Inicio de Session</h3>
 	
-			<form th:action="@{/login}" method="post">
+			<form th:action="@{/login}" method="post"><!-- Esto va a mandar todos los datos al postmapping login donde hara sus comprobaciones si la cuenta existe -->
 				<label>Escriba el Numero de la Cuenta: </label>
 				</br>
 				<input type="text" name="idCuenta" >
@@ -19,10 +19,10 @@
 				<input type="submit" value="Entrar Cuenta" class="boton">
 			</form>
 	
-			<h4 th:text="${mensaje}" class="Error"></h4>
-			<h4 th:text="${mensajelogout}" class="logout"></h4>
+			<h4 th:text="${mensaje}" class="Error"></h4><!-- En caso de que el usuario no exista aqui nos sacara un mensaje de error -->
+			<h4 th:text="${mensajelogout}" class="logout"></h4><!-- Una vez cerrada la session aqui nos sacara un mensaje diciendo que la session se ha cerrado -->
 			</br>
-			<a th:href="@{/}">
+			<a th:href="@{/}"><!-- boton que nos devuelva a nuestra pagina de inicio -->
 				<input type="button" value="Volver al Home" class="boton">
 			</a>
 		</div>

@@ -7,16 +7,17 @@
 </head>
 <body>
 	<div class="contenido">
-		<h2>Esta es tu Cuenta Id: <span th:text="${session.cuentas.idCuenta}"></span></h2>
+		<h2>Esta es tu Cuenta Id: <span th:text="${session.cuentas.idCuenta}"></span></h2><!-- a traves del objeto session sacamos el id de la cuenta con la que hemos accedido -->
 		<ul>
+			<!-- con thymeleaf ponemos las rutas de cada pagina para poder acceder a ellas cuando pinchemos encima del texto -->
 			<a th:href="@{/Ingresar}"><li>Ingresar</li></a>
 			<a th:href="@{/Extraer}"><li>Extraer</li></a>
 			<a th:href="@{/Movimientos}"><li>Ver Movimientos</li></a>
 			<a th:href="@{/Transferencia}"><li>Transferencia</li></a>
 			<a th:href="@{/logout}"><li>Cerrar Session</li></a>
 		</ul>
-		<h2 th:text="${mensajeIngreso}" class="Correcto"></h2>
-		<h2 th:text="${mensajeIngresoFallo}" class="Error"></h2>
+		<h2 th:text="${mensajeIngreso}" class="Correcto"></h2><!-- aqui se plasma el mensaje en caso de que el ingreso se haya realizado -->
+		<h2 th:text="${mensajeIngresoFallo}" class="Error"></h2><!-- aqui se plasma el mensaje en caso de que el ingreso no se haya realizado -->
 	</div>
 </body>
 </html>

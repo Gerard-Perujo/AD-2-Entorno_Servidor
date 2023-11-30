@@ -7,14 +7,14 @@
 </head>
 <body>
 	<div class="contenido">
-	<h4>Dinero que quieres extraer de tu Cuenta : <span th:text="${session.cuentas.idCuenta}"></span></h4>
+	<h4>Dinero que quieres extraer de tu Cuenta : <span th:text="${session.cuentas.idCuenta}"></span></h4><!-- a traves del objeto session sacamos el id de la cuenta con la que hemos accedido -->
 	<form th:action="@{/Extraer}" method="post">
 		<label>Introduce la cantidad de Dinero que quieres sacar </label>
 		<input type="number" name="saldo">
 		</br>
 		<input type="submit" value="Sacar Dinero">
 	</form>
-	<a th:href="@{/Cuenta}">
+	<a th:href="@{/Cuenta}"><!-- boton para volver a la pagina cuenta -->
 		<input type="button" value="Volver a Cuenta">
 	</a>
 	</div>
